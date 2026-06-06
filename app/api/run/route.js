@@ -1,5 +1,5 @@
-import { getSession } from '@/lib/auth'
-import { decryptScript } from '@/lib/crypto'
+import { getSession } from '../../lib/auth'
+import { decryptScript } from '../../lib/crypto'
 import { cookies } from 'next/headers'
 import { NextResponse } from 'next/server'
 
@@ -10,7 +10,7 @@ export async function POST(request) {
   const { script: scriptId, key } = await request.json()
   if (!scriptId || !key) return NextResponse.json({ error: 'معرف السكريبت والمفتاح مطلوبان' }, { status: 400 })
 
-  const { getScript } = await import('@/lib/store')
+  const { getScript } = await import('../../lib/store')
   const script = getScript(scriptId)
   if (!script) return NextResponse.json({ error: 'السكريبت غير موجود' }, { status: 404 })
 
