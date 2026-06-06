@@ -1,4 +1,4 @@
-import { initAuth, login } from '../../lib/auth'
+import { initAuth, login } from '../../../lib/auth.js'
 import { cookies } from 'next/headers'
 import { NextResponse } from 'next/server'
 
@@ -13,7 +13,12 @@ export async function POST(request) {
   }
   
   const response = NextResponse.json({ success: true })
-  response.cookies.set('session', sessionId, { httpOnly: true, secure: true, sameSite: 'strict', maxAge: 86400 })
+  response.cookies.set('session', sessionId, { 
+    httpOnly: true, 
+    secure: true, 
+    sameSite: 'strict', 
+    maxAge: 86400 
+  })
   
   return response
 }
