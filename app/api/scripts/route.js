@@ -1,5 +1,5 @@
-import { getSession } from '@/lib/auth'
-import { listScripts } from '@/lib/store'
+import { getSession } from '../../lib/auth'
+import { listScripts } from '../../lib/store'
 import { cookies } from 'next/headers'
 import { NextResponse } from 'next/server'
 
