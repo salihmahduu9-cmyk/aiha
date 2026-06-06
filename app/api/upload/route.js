@@ -1,6 +1,6 @@
-import { getSession } from '@/lib/auth'
-import { encryptScript, validateKey, generateKey } from '@/lib/crypto'
-import { storeScript, deleteScript } from '@/lib/store'
+import { getSession } from '../../lib/auth'
+import { encryptScript, validateKey, generateKey } from '../../lib/crypto'
+import { storeScript, deleteScript } from '../../lib/store'
 import { cookies } from 'next/headers'
 import { NextResponse } from 'next/server'
 
